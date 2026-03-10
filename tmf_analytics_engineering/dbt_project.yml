@@ -1,0 +1,28 @@
+name: 'tmf_analytics_engineering'
+version: '1.0.0'
+
+profile: 'tmf_analytics_engineering'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  tmf_analytics_engineering:
+    +database: DATA_SANDBOX
+
+    staging:
+      +materialized: view
+
+    marts:
+      +materialized: table
+
+    sandbox:
+      +materialized: view

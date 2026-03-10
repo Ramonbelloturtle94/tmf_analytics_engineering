@@ -1,0 +1,14 @@
+dbt_learning:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ei74370.eu-central-1
+      user: RBELLO
+      password: Kelechi1994!
+      role: TMF_RW_DEV
+      warehouse: TMF_REP_WH_DEV
+      database: DATA_SANDBOX
+      schema: RBELLO_DBT_SANDBOX
+      threads: 4
+      client_session_keep_alive: false
