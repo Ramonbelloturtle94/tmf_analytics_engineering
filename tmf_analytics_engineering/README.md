@@ -6,26 +6,15 @@ This repository establishes a local dbt development workflow connected to Snowfl
 
 Providing a foundation for introducing analytics engineering standards across the TM Forum Data Team.
 
-Snowflake Source Tables
-│
-├── TRAVELLERS
-└── TRIP_BOOKINGS
-        │
-        │  (dbt source definitions)
-        ▼
-Staging Layer
-│
-├── stg_travellers
-└── stg_trip_bookings
-        │
-        │  (dbt ref() dependency)
-        ▼
-Mart Layer
-│
-└── fct_trip_bookings
-        │
-        ▼
-Analytics / Reporting Layer
+TRAVELLERS
+      ↓
+stg_travellers
+      ↓
+        → fct_trip_bookings
+      ↓
+stg_trip_bookings
+      ↓
+TRIP_BOOKINGS
 
 ---
 
