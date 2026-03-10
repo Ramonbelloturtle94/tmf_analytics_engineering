@@ -1,13 +1,25 @@
-# virtual env
-dbt_env/
-
 # dbt build artifacts
 target/
 logs/
 dbt_packages/
+dbt_internal_packages/
 
-# mac
+# local dbt credentials
+profiles.yml
+
+# python environments
+dbt_env/
+venv/
+.env/
+
+# OS files
 .DS_Store
+Thumbs.db
 
-# secrets
-.env
+# VS Code / editor files
+*.code-workspace
+.user.yml
+
+# python cache
+__pycache__/
+*.pyc

@@ -1,0 +1,9 @@
+
+version: 2
+
+sources:
+  - name: sandbox
+    database: DATA_SANDBOX
+    schema: RBELLO_DBT_SANDBOX
+    tables:
+      - name: my_first_dbt_model

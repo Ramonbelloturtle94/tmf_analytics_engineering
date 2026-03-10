@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: oms_training
+    database: DATA_SANDBOX
+    schema: RBELLO_DBT_SANDBOX
+    tables:
+      - name: TRAVELLERS
+      - name: TRIP_BOOKINGS
+
+models:
+  - name: stg_travellers
+    description: Cleaned traveller dataset
+    columns:
+      - name: traveller_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+
+  - name: stg_trip_bookings
+    description: Trip booking transactions
+    columns:
+      - name: booking_id
+        tests:
+          - not_null
+          - unique
+      - name: traveller_id
+        tests:
+          - not_null
